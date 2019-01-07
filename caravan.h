@@ -13,7 +13,24 @@
 #ifndef CARAVAN_H
 #define CARAVAN_H
 
+#include "caravan.h"
 #include "pack_animal.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "general.h"
+
+struct CaravanImplementation
+{
+    int length;
+    int loadOfCaravan;
+    struct Node *head;
+};
+
+struct Node
+{
+    PackAnimal data;
+    struct Node *next;
+};
 
 /**
 * Initialisiert eine Karawane. D. h., dass es alle in der Karawane befindlichen Tiere aus der
