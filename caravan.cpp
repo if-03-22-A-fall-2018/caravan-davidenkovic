@@ -32,14 +32,18 @@ int get_length(Caravan caravan)
 return count;
 }
 
-void delete_caravan(Caravan caravan)
-{
-  for (int i = 0; i < caravan->length; i++){
-    Node *temp = caravan->head;
-    caravan->head = temp->next;
-    sfree(temp);
-  }
+void delete_caravan(Caravan caravan){
+  int length = get_length(caravan);
+
+  for(int i = 0; i < length; i++){
+  Node* head = caravan->head;
+  caravan->head = head->next;
+  sfree(head);
 }
+
+sfree(caravan);
+}
+
 
 void add_pack_animal(Caravan caravan, PackAnimal animal)
 {
@@ -60,7 +64,7 @@ void add_pack_animal(Caravan caravan, PackAnimal animal)
 
 void remove_pack_animal(Caravan caravan, PackAnimal animal)
 {
-
+  return;
 }
 
 int get_caravan_load(Caravan caravan)
